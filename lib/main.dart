@@ -1,4 +1,4 @@
-import 'package:chatapp/Screens/onBoarding1.dart';
+import 'package:chatapp/Screens/splash.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -11,7 +11,7 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoard1(),
+      home: Splash(),
     );
   }
 }

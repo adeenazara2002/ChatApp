@@ -1,14 +1,14 @@
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
 
-class OnBoard1 extends StatefulWidget {
-  const OnBoard1({super.key});
+class Splash extends StatefulWidget {
+  const Splash({super.key});
 
   @override
-  State<OnBoard1> createState() => _OnBoard1State();
+  State<Splash> createState() => _SplashState();
 }
 
-class _OnBoard1State extends State<OnBoard1> {
+class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
