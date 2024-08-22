@@ -15,12 +15,11 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    // Navigate to the next screen after 3 seconds
+    // ==== NAVIGATE TO THE NEXT SCREEN ====
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-            builder: (context) => OnBoard()), // Replace with your main screen
+        MaterialPageRoute(builder: (context) => OnBoard()),
       );
     });
   }
@@ -39,27 +38,26 @@ class _SplashState extends State<Splash> {
               child: Image.asset('assets/images/foodie.png'),
             ),
 
-            // === FOOD LOGO (Half Visible from Left and Bottom) ===
+            // === FOOD LOGO ===
             Align(
               alignment: Alignment.bottomLeft,
               child: Transform.translate(
-                offset: Offset(
-                    -50, 30), // Adjust both horizontal and vertical offsets
+                offset: Offset(-50, 30),
                 child: Image.asset('assets/images/foodlogo.png'),
               ),
             ),
 
             // === SMALL HORIZONTAL LINE ===
+
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                margin: const EdgeInsets.only(
-                    bottom: 10, left: 30), // Adjust the bottom margin if needed
-                width: 120, // Set the desired width of the line
-                height: 5, // Set the height of the line
+                margin: const EdgeInsets.only(bottom: 10, left: 30),
+                width: 120,
+                height: 5,
                 decoration: BoxDecoration(
                   color: AppColors.headingColor,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: AppColors.headingColor,
                   ),
@@ -72,4 +70,3 @@ class _SplashState extends State<Splash> {
     );
   }
 }
-
