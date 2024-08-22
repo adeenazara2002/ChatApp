@@ -1,5 +1,8 @@
+import 'dart:async';
+import 'package:chatapp/Screens/onBoarding.dart';
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:chatapp/Screens/onBoarding.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -9,6 +12,19 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+    // Navigate to the next screen after 3 seconds
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => OnBoard()), // Replace with your main screen
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +54,8 @@ class _SplashState extends State<Splash> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 margin: const EdgeInsets.only(
-                    bottom: 20, left: 30), // Adjust the bottom margin if needed
-                width: 100, // Set the desired width of the line
+                    bottom: 10, left: 30), // Adjust the bottom margin if needed
+                width: 120, // Set the desired width of the line
                 height: 5, // Set the height of the line
                 decoration: BoxDecoration(
                   color: AppColors.headingColor,
@@ -56,3 +72,4 @@ class _SplashState extends State<Splash> {
     );
   }
 }
+
