@@ -1,15 +1,14 @@
-import 'package:chatapp/Screens/onBoarding2.dart';
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
 
-class OnBoard extends StatefulWidget {
-  const OnBoard({super.key});
+class OnBoard2 extends StatefulWidget {
+  const OnBoard2({super.key});
 
   @override
-  State<OnBoard> createState() => _OnBoardState();
+  State<OnBoard2> createState() => _OnBoard2State();
 }
 
-class _OnBoardState extends State<OnBoard> {
+class _OnBoard2State extends State<OnBoard2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,10 +83,8 @@ class _OnBoardState extends State<OnBoard> {
             SizedBox(height: 40,),
              ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => OnBoard2(),
-                            )
-                            );
-
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) => )),
+                            
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.pinkColor,
@@ -99,7 +96,7 @@ class _OnBoardState extends State<OnBoard> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 15.0 , horizontal: 40),
                             child: Text(
-                              'Next',
+                              'Previous',
                               style: TextStyle(
                                   fontSize: 17.0,
                                   fontFamily: 'Poppins-Regular',
