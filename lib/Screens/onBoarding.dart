@@ -30,7 +30,7 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/donut.png'),
               ],
             ),
-            SizedBox(height: 5), // Add some space between the image and text
+            SizedBox(height: 5),
 
             // === Text without space between them ===
             Padding(

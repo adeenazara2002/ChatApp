@@ -29,7 +29,7 @@ class _OnBoard2State extends State<OnBoard2> {
                 Image.asset('assets/images/burgers.png'),
               ],
             ),
-            SizedBox(height: 5), // Add some space between the image and text
+            SizedBox(height: 55),
 
             // === Text without space between them ===
             Padding(
@@ -38,18 +38,20 @@ class _OnBoard2State extends State<OnBoard2> {
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Take your comfort',
+                    'Foodie is Where Your',
                     style: TextStyle(
                       color: AppColors.headingColor,
                       fontWeight: FontWeight.w700,
                       fontSize: 25,
                     ),
                   ),
-                    // Padding(padding: EdgeInsets.only(left: 100)),
-                    SizedBox(width: 50,),
+                  // Padding(padding: EdgeInsets.only(left: 100)),
+                  SizedBox(
+                    width: 50,
+                  ),
 
                   Text(
-                    'Food here',
+                    'Comfort Food Resides',
                     style: TextStyle(
                       color: AppColors.headingColor,
                       fontWeight: FontWeight.w700,
@@ -57,10 +59,12 @@ class _OnBoard2State extends State<OnBoard2> {
                     ),
                   ),
 
-                   SizedBox(width: 50,),
-          Padding(padding: EdgeInsets.only(top: 10)),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
                   Text(
-                    'Here you can find a chef or dish for every',
+                    'Enjoy a fast and smooth food delievery at',
                     style: TextStyle(
                       color: AppColors.textColor,
                       fontWeight: FontWeight.w400,
@@ -70,7 +74,7 @@ class _OnBoard2State extends State<OnBoard2> {
 
                   //  Padding(padding: EdgeInsets.only(top: 10)),
                   Text(
-                    'taste and color. Enjoy!',
+                    'your doorstep',
                     style: TextStyle(
                       color: AppColors.textColor,
                       fontWeight: FontWeight.w400,
@@ -80,33 +84,37 @@ class _OnBoard2State extends State<OnBoard2> {
                 ],
               ),
             ),
-            SizedBox(height: 40,),
-             ElevatedButton(
-                          onPressed: () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => )),
-                            
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.pinkColor,
-                            foregroundColor: AppColors.screenColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15.0 , horizontal: 40),
-                            child: Text(
-                              'Next',
-                              style: TextStyle(
-                                  fontSize: 17.0,
-                                  fontFamily: 'Poppins-Regular',
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                        ),
-            SizedBox(height: 50,),
-                  
-                        Align(
+            SizedBox(
+              height: 40,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => )),
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.pinkColor,
+                foregroundColor: AppColors.screenColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15.0, horizontal: 40),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                      fontSize: 17.0,
+                      fontFamily: 'Poppins-Regular',
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+
+            Align(
               alignment: Alignment.bottomCenter,
               child: Container(
                 margin: const EdgeInsets.only(left: 10),
