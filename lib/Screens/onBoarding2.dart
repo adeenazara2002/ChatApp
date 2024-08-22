@@ -25,8 +25,8 @@ class _OnBoard2State extends State<OnBoard2> {
             Stack(
               alignment: Alignment.center,
               children: [
-                Image.asset('assets/images/Illustartion.png'),
-                Image.asset('assets/images/donut.png'),
+                Image.asset('assets/images/Illustration2.png'),
+                Image.asset('assets/images/burgers.png'),
               ],
             ),
             SizedBox(height: 5), // Add some space between the image and text
@@ -96,7 +96,7 @@ class _OnBoard2State extends State<OnBoard2> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 15.0 , horizontal: 40),
                             child: Text(
-                              'Previous',
+                              'Next',
                               style: TextStyle(
                                   fontSize: 17.0,
                                   fontFamily: 'Poppins-Regular',
