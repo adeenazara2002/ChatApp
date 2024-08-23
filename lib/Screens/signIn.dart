@@ -1,4 +1,3 @@
-import 'package:chatapp/Screens/signIn.dart';
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -23,95 +22,61 @@ class _SignInState extends State<SignIn> {
             Stack(
               children: [
                 Image.asset('assets/images/pinkPart.png'),
-                Image.asset('assets/images/burgers.png'),
+                Positioned(
+                  top: 100,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: Image.asset('assets/images/foodieWhite.png'),
+                  ),
+                ),
+                Positioned(
+                  top: 200,
+                  left: 70,
+                  right: 0,
+                  child: Text(
+                    'Deliver Favourite Food',
+                    style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.screenColor),
+                  ),
+                ),
               ],
             ),
-            SizedBox(height: 55),
+            SizedBox(height: 200),
 
             // === Text without space between them ===
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Foodie is Where Your',
+                    'Don\'t have an account?',
                     style: TextStyle(
                       color: AppColors.headingColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
                     ),
                   ),
-                  // Padding(padding: EdgeInsets.only(left: 100)),
                   SizedBox(
                     width: 50,
                   ),
-
                   Text(
-                    'Comfort Food Resides',
+                    'REGISTER',
                     style: TextStyle(
-                      color: AppColors.headingColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 25,
-                    ),
-                  ),
-
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 10)),
-                  Text(
-                    'Enjoy a fast and smooth food delievery at',
-                    style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                    ),
-                  ),
-
-                  //  Padding(padding: EdgeInsets.only(top: 10)),
-                  Text(
-                    'your doorstep',
-                    style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
+                      color: AppColors.pinkColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17,
                     ),
                   ),
                 ],
               ),
             ),
+
             SizedBox(
               height: 40,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => SignIn()));
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.pinkColor,
-                foregroundColor: AppColors.screenColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15.0, horizontal: 40),
-                child: Text(
-                  'Next',
-                  style: TextStyle(
-                      fontSize: 17.0,
-                      fontFamily: 'Poppins-Regular',
-                      fontWeight: FontWeight.w600),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
