@@ -112,7 +112,7 @@ class _MessageState extends State<Message> {
               ),
 
               // 2
-                SizedBox(
+              SizedBox(
                 height: 10,
               ),
               Row(
@@ -186,7 +186,7 @@ class _MessageState extends State<Message> {
 
               // 3
 
-                SizedBox(
+              SizedBox(
                 height: 10,
               ),
               Row(
@@ -258,9 +258,25 @@ class _MessageState extends State<Message> {
                 ],
               ),
 
-            
+              SizedBox(
+                height: 300,
+              ),
 
-              
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: const EdgeInsets.only(left: 10),
+                  width: 120,
+                  height: 5,
+                  decoration: BoxDecoration(
+                    color: AppColors.headingColor,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: AppColors.headingColor,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
