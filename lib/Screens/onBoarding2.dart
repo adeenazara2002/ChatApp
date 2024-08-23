@@ -1,3 +1,4 @@
+import 'package:chatapp/Screens/signIn.dart';
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -89,7 +90,8 @@ class _OnBoard2State extends State<OnBoard2> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => )),
+                Navigator.push(context,
+                 MaterialPageRoute(builder: (context) => SignIn()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.pinkColor,
