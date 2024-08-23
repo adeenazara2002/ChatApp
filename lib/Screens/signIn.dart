@@ -48,9 +48,8 @@ class _SignInState extends State<SignIn> {
 
             // === Form Container ===
             Positioned(
-              top: 280, // Adjust this value as needed
+              top: 280,
               left: 10,
-              // right: 10,
               child: Container(
                 margin: const EdgeInsets.only(left: 20),
                 width: 300,
@@ -63,9 +62,62 @@ class _SignInState extends State<SignIn> {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.25), // Shadow color
-                      blurRadius: 8, // Spread of the shadow
-                      offset: Offset(0, 4), // Offset to give a 3D effect
+                      color: Colors.black.withOpacity(0.25),
+                      blurRadius: 8,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Padding(padding: EdgeInsets.only(left: 50)),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      'Login',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25,
+                          color: AppColors.headingColor),
+                    ),
+                    // textfield
+
+                    Container(
+                      height: 60,
+                      width: 260,
+                      margin: EdgeInsets.only(top: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: AppColors.textFieldColor,
+                        ),
+                      ),
+                      child: TextField(
+                        // controller: _searchController,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.person,
+                            color: AppColors.headingColor,
+                            size: 30,
+                          ),
+                          hintText: 'Enter Email',
+                          hintStyle: TextStyle(
+                            color: AppColors.headingColor,
+                            fontFamily: 'Poppins-Regular',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 20.0,
+                            horizontal: 20.0,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: Color.fromRGBO(143, 143, 158, 1),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -74,7 +126,7 @@ class _SignInState extends State<SignIn> {
 
             // === Text Below Form ===
             Positioned(
-              bottom: 40, // Position this text above the bottom container
+              bottom: 40,
               left: 110,
               child: Column(
                 children: [
@@ -100,10 +152,6 @@ class _SignInState extends State<SignIn> {
               ),
             ),
 
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Padding(padding: EdgeInsets.only(bottom: 120)),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
