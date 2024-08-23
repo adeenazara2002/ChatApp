@@ -16,58 +16,66 @@ class _SignInState extends State<SignIn> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         color: AppColors.screenColor,
-        child: Column(
+        child: Stack(
           children: [
-            // === Use Stack to overlay images ===
-            Stack(
-              children: [
-                Image.asset('assets/images/pinkPart.png'),
-                Positioned(
-                  top: 100,
-                  left: 0,
-                  right: 0,
-                  child: Center(
-                    child: Image.asset('assets/images/foodieWhite.png'),
-                  ),
-                ),
-                Positioned(
-                  top: 200,
-                  left: 70,
-                  right: 0,
-                  child: Text(
-                    'Deliver Favourite Food',
-                    style: TextStyle(
-                        fontSize: 21,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.screenColor),
-                  ),
-                ),
+            // === Pink Background Image ===
+            Image.asset('assets/images/pinkPart.png'),
 
-                // ==== FORM ====
-
-                Positioned(
-                    top: 200,
-                    left: 70,
-                    right: 0,
-                    child: Container(
-                      margin: const EdgeInsets.only(bottom: 10, left: 30),
-                      width: 120,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: AppColors.screenColor,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: AppColors.screenColor,
-                        ),
-                      ),
-                    )),
-              ],
+            // === Foodie Image ===
+            Positioned(
+              top: 100,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: Image.asset('assets/images/foodieWhite.png'),
+              ),
             ),
-            SizedBox(height: 200),
 
-            // === Text without space between them ===
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
+            // === Text Below Image ===
+            Positioned(
+              top: 200,
+              left: 70,
+              right: 0,
+              child: Text(
+                'Deliver Favourite Food',
+                style: TextStyle(
+                  fontSize: 21,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.screenColor,
+                ),
+              ),
+            ),
+
+            // === Form Container ===
+             Positioned(
+                  top: 280, // Adjust this value as needed
+                  left: 10,
+                  // right: 10,
+                  child: Container(
+                     margin: const EdgeInsets.only(left: 20),
+                    width: 300,
+                    height: 350,
+                    decoration: BoxDecoration(
+                      color: AppColors.screenColor,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: AppColors.screenColor,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25), // Shadow color
+                          blurRadius: 8, // Spread of the shadow
+                          offset: Offset(0, 4), // Offset to give a 3D effect
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+            // === Text Below Form ===
+            Positioned(
+              bottom: 30, // Position this text above the bottom container
+              left: 100,
               child: Column(
                 children: [
                   Text(
@@ -78,9 +86,7 @@ class _SignInState extends State<SignIn> {
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(
-                    width: 50,
-                  ),
+                  SizedBox(height: 5),
                   Text(
                     'REGISTER',
                     style: TextStyle(
@@ -93,9 +99,10 @@ class _SignInState extends State<SignIn> {
               ),
             ),
 
-            SizedBox(
-              height: 40,
-            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
+Padding(padding: EdgeInsets.only(bottom: 20)),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
