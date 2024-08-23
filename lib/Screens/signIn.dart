@@ -42,6 +42,25 @@ class _SignInState extends State<SignIn> {
                         color: AppColors.screenColor),
                   ),
                 ),
+
+                // ==== FORM ====
+
+                Positioned(
+                    top: 200,
+                    left: 70,
+                    right: 0,
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 10, left: 30),
+                      width: 120,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: AppColors.screenColor,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: AppColors.screenColor,
+                        ),
+                      ),
+                    )),
               ],
             ),
             SizedBox(height: 200),
