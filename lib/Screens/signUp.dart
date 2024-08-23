@@ -1,3 +1,4 @@
+import 'package:chatapp/Screens/signIn.dart';
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -90,6 +91,7 @@ class _SignUpState extends State<SignUp> {
                         width: 260,
                         margin: EdgeInsets.only(top: 10),
                         decoration: BoxDecoration(
+                          color: AppColors.textFieldColor,
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
                             color: AppColors.textFieldColor,
@@ -103,7 +105,7 @@ class _SignUpState extends State<SignUp> {
                               color: AppColors.headingColor,
                               size: 20,
                             ),
-                            hintText: 'Enter Email',
+                            hintText: 'Name',
                             hintStyle: TextStyle(
                               color: AppColors.headingColor,
                               fontFamily: 'Poppins-Regular',
@@ -123,6 +125,46 @@ class _SignUpState extends State<SignUp> {
                       ),
 
                       // textfield2
+
+                      Container(
+                        height: 60,
+                        width: 260,
+                        margin: EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.textFieldColor,
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: AppColors.textFieldColor,
+                          ),
+                        ),
+                        child: TextField(
+                          // controller: _searchController,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: AppColors.headingColor,
+                              size: 20,
+                            ),
+                            hintText: 'Email',
+                            hintStyle: TextStyle(
+                              color: AppColors.headingColor,
+                              fontFamily: 'Poppins-Regular',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 20.0,
+                            ),
+                          ),
+                          style: TextStyle(
+                            color: AppColors.headingColor,
+                          ),
+                        ),
+                      ),
+
+                      // textfield3
 
                       Container(
                         height: 60,
@@ -166,29 +208,10 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                       ),
-                      // === text ===
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        children: [
-                          Spacer(),
-                          Padding(
-                            padding: EdgeInsets.only(right: 20),
-                            child: Text(
-                              'Forget Password?',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  color: AppColors.headingColor),
-                            ),
-                          ),
-                        ],
-                      ),
 
                       // === LOGIN BUTTON ===
                       SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
 
                       ElevatedButton(
@@ -202,7 +225,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 80.0, vertical: 13.0),
+                              horizontal: 50.0, vertical: 12.0),
                           child: Text(
                             'Create Account',
                             style: TextStyle(
@@ -210,38 +233,6 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                       ),
-
-                      // ==== TEXT ====
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 140),
-                            child: Text(
-                              'Or',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  color: AppColors.pinkColor),
-                            ),
-                          ),
-                        ],
-                      ),
-
-                      // ==== IMAGES ====
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Padding(padding: EdgeInsets.only(left: 115)),
-                          Image.asset('assets/images/google-icon 1.png'),
-                          Padding(padding: EdgeInsets.only(left: 10)),
-                          Image.asset('assets/images/facebook-3 1.png'),
-                        ],
-                      )
                     ],
                   ),
                 ),
@@ -250,11 +241,11 @@ class _SignUpState extends State<SignUp> {
               // === Text Below Form ===
               Positioned(
                 bottom: 40,
-                left: 110,
+                left: 100,
                 child: Column(
                   children: [
                     Text(
-                      'Don\'t have an account?',
+                      'Already have an account?',
                       style: TextStyle(
                         color: AppColors.headingColor,
                         fontWeight: FontWeight.w600,
@@ -263,14 +254,24 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: 5),
                     Padding(padding: EdgeInsets.only(left: 10)),
-                    Text(
-                      'REGISTER',
-                      style: TextStyle(
-                        color: AppColors.pinkColor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 17,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignIn(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'SIGNIN',
+                        style: TextStyle(
+                          color: AppColors.pinkColor,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17,
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),

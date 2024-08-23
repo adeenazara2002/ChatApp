@@ -1,4 +1,5 @@
 import 'package:chatapp/Screens/signIn.dart';
+import 'package:chatapp/Screens/signUp.dart';
 import 'package:chatapp/Screens/splash.dart';
 import 'package:flutter/material.dart';
 void main(){
