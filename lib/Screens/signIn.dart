@@ -47,35 +47,35 @@ class _SignInState extends State<SignIn> {
             ),
 
             // === Form Container ===
-             Positioned(
-                  top: 280, // Adjust this value as needed
-                  left: 10,
-                  // right: 10,
-                  child: Container(
-                     margin: const EdgeInsets.only(left: 20),
-                    width: 300,
-                    height: 350,
-                    decoration: BoxDecoration(
-                      color: AppColors.screenColor,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: AppColors.screenColor,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.25), // Shadow color
-                          blurRadius: 8, // Spread of the shadow
-                          offset: Offset(0, 4), // Offset to give a 3D effect
-                        ),
-                      ],
-                    ),
+            Positioned(
+              top: 280, // Adjust this value as needed
+              left: 10,
+              // right: 10,
+              child: Container(
+                margin: const EdgeInsets.only(left: 20),
+                width: 300,
+                height: 350,
+                decoration: BoxDecoration(
+                  color: AppColors.screenColor,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: AppColors.screenColor,
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.25), // Shadow color
+                      blurRadius: 8, // Spread of the shadow
+                      offset: Offset(0, 4), // Offset to give a 3D effect
+                    ),
+                  ],
                 ),
+              ),
+            ),
 
             // === Text Below Form ===
             Positioned(
-              bottom: 30, // Position this text above the bottom container
-              left: 100,
+              bottom: 40, // Position this text above the bottom container
+              left: 110,
               child: Column(
                 children: [
                   Text(
@@ -87,6 +87,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   SizedBox(height: 5),
+                  Padding(padding: EdgeInsets.only(left: 10)),
                   Text(
                     'REGISTER',
                     style: TextStyle(
@@ -102,11 +103,11 @@ class _SignInState extends State<SignIn> {
             // SizedBox(
             //   height: 20,
             // ),
-Padding(padding: EdgeInsets.only(bottom: 20)),
+            // Padding(padding: EdgeInsets.only(bottom: 120)),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                margin: const EdgeInsets.only(left: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 width: 120,
                 height: 5,
                 decoration: BoxDecoration(
