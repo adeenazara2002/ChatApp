@@ -71,10 +71,7 @@ class _SignInState extends State<SignIn> {
                     ],
                   ),
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.start,
-                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Padding(padding: EdgeInsets.only(left: 100)),
                       SizedBox(
                         height: 30,
                       ),
@@ -168,13 +165,12 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                       // === text ===
-                      // Padding(padding: EdgeInsets.only(left: 80)),
                       SizedBox(
                         height: 5,
                       ),
                       Row(
                         children: [
-                          Spacer(), // Moves the text to the right
+                          Spacer(),
                           Padding(
                             padding: EdgeInsets.only(right: 20),
                             child: Text(
@@ -186,6 +182,31 @@ class _SignInState extends State<SignIn> {
                             ),
                           ),
                         ],
+                      ),
+
+                      // === LOGIN BUTTON ===
+                      SizedBox(
+                        height: 10,
+                      ),
+
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.pinkColor,
+                          foregroundColor: AppColors.screenColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 80.0, vertical: 13.0),
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                                fontSize: 17.0, fontWeight: FontWeight.w600),
+                          ),
+                        ),
                       ),
                     ],
                   ),
