@@ -1,3 +1,4 @@
+import 'package:chatapp/Screens/chatDetails.dart';
 import 'package:chatapp/Screens/message.dart';
 import 'package:chatapp/Screens/signIn.dart';
 import 'package:chatapp/Screens/signUp.dart';
@@ -15,7 +16,7 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Message(),
+      home: ChatDetails(),
     );
   }
 }
