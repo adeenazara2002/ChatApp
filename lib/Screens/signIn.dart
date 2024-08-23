@@ -55,7 +55,7 @@ class _SignInState extends State<SignIn> {
                 child: Container(
                   margin: const EdgeInsets.only(left: 20),
                   width: 300,
-                  height: 350,
+                  height: 360,
                   decoration: BoxDecoration(
                     color: AppColors.screenColor,
                     borderRadius: BorderRadius.circular(20),
@@ -73,7 +73,7 @@ class _SignInState extends State<SignIn> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 30,
+                        height: 10,
                       ),
                       Text(
                         'Login',
@@ -82,6 +82,7 @@ class _SignInState extends State<SignIn> {
                             fontSize: 25,
                             color: AppColors.headingColor),
                       ),
+
                       // textfield1
 
                       Container(
@@ -120,7 +121,8 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                       ),
-                      // textfield1
+
+                      // textfield2
 
                       Container(
                         height: 60,
@@ -186,7 +188,7 @@ class _SignInState extends State<SignIn> {
 
                       // === LOGIN BUTTON ===
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
 
                       ElevatedButton(
@@ -208,6 +210,38 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                       ),
+
+                      // ==== TEXT ====
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 140),
+                            child: Text(
+                              'Or',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: AppColors.pinkColor),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      // ==== IMAGES ====
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Padding(padding: EdgeInsets.only(left: 115)),
+                          Image.asset('assets/images/google-icon 1.png'),
+                          Padding(padding: EdgeInsets.only(left: 10)),
+                          Image.asset('assets/images/facebook-3 1.png'),
+                        ],
+                      )
                     ],
                   ),
                 ),
