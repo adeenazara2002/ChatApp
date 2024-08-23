@@ -1,15 +1,14 @@
-import 'package:chatapp/Screens/signUp.dart';
 import 'package:chatapp/models/colors.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +76,7 @@ class _SignInState extends State<SignIn> {
                         height: 10,
                       ),
                       Text(
-                        'Login',
+                        'Signup',
                         style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 25,
@@ -205,7 +204,7 @@ class _SignInState extends State<SignIn> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 80.0, vertical: 13.0),
                           child: Text(
-                            'Login',
+                            'Create Account',
                             style: TextStyle(
                                 fontSize: 17.0, fontWeight: FontWeight.w600),
                           ),
@@ -264,24 +263,14 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: 5),
                     Padding(padding: EdgeInsets.only(left: 10)),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignUp(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        'REGISTER',
-                        style: TextStyle(
-                          color: AppColors.pinkColor,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 17,
-                        ),
+                    Text(
+                      'REGISTER',
+                      style: TextStyle(
+                        color: AppColors.pinkColor,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

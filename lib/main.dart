@@ -11,7 +11,7 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignIn()
+      home: Splash(),
     );
   }
 }
