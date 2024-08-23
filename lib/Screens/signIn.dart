@@ -69,8 +69,10 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
                 child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(padding: EdgeInsets.only(left: 50)),
+                    // Padding(padding: EdgeInsets.only(left: 100)),
                     SizedBox(
                       height: 30,
                     ),
@@ -81,14 +83,14 @@ class _SignInState extends State<SignIn> {
                           fontSize: 25,
                           color: AppColors.headingColor),
                     ),
-                    // textfield
+                    // textfield1
 
                     Container(
                       height: 60,
                       width: 260,
                       margin: EdgeInsets.only(top: 10),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                           color: AppColors.textFieldColor,
                         ),
@@ -99,7 +101,7 @@ class _SignInState extends State<SignIn> {
                           prefixIcon: Icon(
                             Icons.person,
                             color: AppColors.headingColor,
-                            size: 30,
+                            size: 20,
                           ),
                           hintText: 'Enter Email',
                           hintStyle: TextStyle(
@@ -115,9 +117,70 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         style: TextStyle(
-                          color: Color.fromRGBO(143, 143, 158, 1),
+                          color: AppColors.headingColor,
                         ),
                       ),
+                    ),
+                    // textfield1
+
+                    Container(
+                      height: 60,
+                      width: 260,
+                      margin: EdgeInsets.only(top: 10),
+                      decoration: BoxDecoration(
+                        color: AppColors.textFieldColor,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: AppColors.textFieldColor,
+                        ),
+                      ),
+                      child: TextField(
+                        // controller: _searchController,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: AppColors.headingColor,
+                            size: 20,
+                          ),
+                          hintText: 'Password',
+                          hintStyle: TextStyle(
+                            color: AppColors.headingColor,
+                            fontFamily: 'Poppins-Regular',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.remove_red_eye,
+                            color: AppColors.headingColor,
+                            size: 20,
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 20.0,
+                            horizontal: 20.0,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: AppColors.headingColor,
+                        ),
+                      ),
+                    ),
+                    // === text ===
+                    // Padding(padding: EdgeInsets.only(left: 80)),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 175)),
+                        Text(
+                          'Forget Password?',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: AppColors.headingColor),
+                        ),
+                      ],
                     ),
                   ],
                 ),
