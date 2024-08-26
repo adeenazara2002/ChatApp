@@ -148,59 +148,54 @@ class _ChatDetailsState extends State<ChatDetails> {
                                       ),
                                     ],
                                   ),
-
-                             
                                 ],
                               ),
-
-                              
-
                             ),
                           ],
                         ),
-                             // ==== TEXT FIELD ====
-                      SizedBox(height: 377,),
-                               Container(
-                        height: 60,
-                        width: 300,
-                        margin: EdgeInsets.only(top: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(0),
-                          border: Border.all(
-                            color: AppColors.textFieldColor,
-                          ),
+                        // ==== TEXT FIELD ====
+                        SizedBox(
+                          height: 377,
                         ),
-                        child: TextField(
-                          // controller: _searchController,
-                          decoration: InputDecoration(
-                            
-                            hintText: 'Send message....',
-                            hintStyle: TextStyle(
+                        Container(
+                          height: 60,
+                          width: 300,
+                          margin: EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(0),
+                            border: Border.all(
+                              color: AppColors.textFieldColor,
+                            ),
+                          ),
+                          child: TextField(
+                            // controller: _searchController,
+                            decoration: InputDecoration(
+                              hintText: 'Send message....',
+                              hintStyle: TextStyle(
+                                color: AppColors.textColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              suffixIcon: Container(
+                                padding: EdgeInsets.all(10),
+                                child: Image.asset(
+                                  'assets/images/sentIcon.png',
+                                  height: 20,
+                                  width: 20,
+                                  color: AppColors.pinkColor,
+                                ),
+                              ),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: 20.0,
+                                horizontal: 20.0,
+                              ),
+                            ),
+                            style: TextStyle(
                               color: AppColors.textColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
                             ),
-                            suffixIcon: Container(
-        padding: EdgeInsets.all(10),
-        child: Image.asset(
-          'assets/images/sentIcon.png',
-          height: 20,
-          width: 20,
-          color: AppColors.pinkColor,
-        ),
-      ),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 20.0,
-                              horizontal: 20.0,
-                            ),
-                          ),
-                          style: TextStyle(
-                            color: AppColors.textColor,
                           ),
                         ),
-                      ),
-
                       ],
                     ),
                   ),
