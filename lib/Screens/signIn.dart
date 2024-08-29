@@ -14,6 +14,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool _passwordVisible = false;
 
   // Firebase instance
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -165,7 +166,7 @@ class _SignInState extends State<SignIn> {
                         ),
                         child: TextField(
                           controller: _passwordController,
-                          obscureText: true,
+                          obscureText: !_passwordVisible,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.lock,
@@ -179,10 +180,20 @@ class _SignInState extends State<SignIn> {
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
-                            suffixIcon: Icon(
-                              Icons.remove_red_eye,
-                              color: AppColors.headingColor,
-                              size: 20,
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _passwordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: AppColors.headingColor,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _passwordVisible =
+                                      !_passwordVisible; // Toggle the state
+                                });
+                              },
                             ),
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(
