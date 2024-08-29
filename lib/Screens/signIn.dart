@@ -128,7 +128,7 @@ class _SignInState extends State<SignIn> {
                           controller: _emailController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
-                              Icons.person,
+                              Icons.email,
                               color: AppColors.headingColor,
                               size: 20,
                             ),
