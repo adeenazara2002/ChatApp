@@ -1,5 +1,7 @@
+import 'package:chatapp/Screens/message.dart';
 import 'package:chatapp/Screens/signUp.dart';
 import 'package:chatapp/models/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -10,10 +12,35 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  // Firebase instance
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void _signIn() async {
+    try {
+      // Sign in with email and password
+      await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+
+      // Navigate to Home screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Message()),
+      );
+    } catch (e) {
+      print(e);
+      // You might want to show an error message here
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -97,7 +124,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         child: TextField(
-                          // controller: _searchController,
+                          controller: _emailController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.person,
@@ -137,7 +164,8 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         child: TextField(
-                          // controller: _searchController,
+                          controller: _passwordController,
+                          obscureText: true,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.lock,
@@ -193,7 +221,7 @@ class _SignInState extends State<SignIn> {
                       ),
 
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: _signIn,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.pinkColor,
                           foregroundColor: AppColors.screenColor,

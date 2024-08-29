@@ -1,6 +1,11 @@
 import 'package:chatapp/Screens/signIn.dart';
 import 'package:chatapp/models/colors.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:chatapp/services/firebaseFunctions.dart'; // Import your Firestore service
+import 'package:chatapp/Services/authFunctions.dart';
+import 'package:chatapp/Services/authFunctionsLogin.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -10,10 +15,45 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  // Firebase instance
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void _createAccount() async {
+    try {
+      // Create user with email and password
+      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+
+      // Save user info to Firestore
+    
+      
+      await FirestoreServices.saveUser(
+      _nameController.text,
+      _emailController.text,
+      userCredential.user!.uid,
+    );
+
+      // Navigate to SignIn screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => SignIn()),
+      );
+    } catch (e) {
+      print(e);
+      // You might want to show an error message here
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -98,7 +138,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                         child: TextField(
-                          // controller: _searchController,
+                          controller: _nameController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.person,
@@ -138,7 +178,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                         child: TextField(
-                          // controller: _searchController,
+                          controller: _emailController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.email,
@@ -178,7 +218,8 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                         child: TextField(
-                          // controller: _searchController,
+                          controller: _passwordController,
+                          obscureText: true,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.lock,
@@ -215,7 +256,7 @@ class _SignUpState extends State<SignUp> {
                       ),
 
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: _createAccount,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.pinkColor,
                           foregroundColor: AppColors.screenColor,
