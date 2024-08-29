@@ -18,6 +18,7 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool _passwordVisible = false;
 
   // Firebase instance
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -25,19 +26,19 @@ class _SignUpState extends State<SignUp> {
   void _createAccount() async {
     try {
       // Create user with email and password
-      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,
       );
 
       // Save user info to Firestore
-    
-      
+
       await FirestoreServices.saveUser(
-      _nameController.text,
-      _emailController.text,
-      userCredential.user!.uid,
-    );
+        _nameController.text,
+        _emailController.text,
+        userCredential.user!.uid,
+      );
 
       // Navigate to SignIn screen
       Navigator.pushReplacement(
@@ -219,7 +220,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         child: TextField(
                           controller: _passwordController,
-                          obscureText: true,
+                          obscureText: !_passwordVisible, // Toggle visibility
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.lock,
@@ -233,10 +234,20 @@ class _SignUpState extends State<SignUp> {
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
-                            suffixIcon: Icon(
-                              Icons.remove_red_eye,
-                              color: AppColors.headingColor,
-                              size: 20,
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _passwordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: AppColors.headingColor,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _passwordVisible =
+                                      !_passwordVisible; // Toggle the state
+                                });
+                              },
                             ),
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(
